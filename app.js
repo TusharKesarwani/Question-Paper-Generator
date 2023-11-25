@@ -16,26 +16,25 @@ app.set('view engine', 'pug') // Set the template engine as pug
 app.set('views', path.join(__dirname, 'views')) // Set the views directory
 
 // Endpoint to the application
-app.get('/',(req, res) => {
-    const params = {};
-    res.status(200).send('index.pug',params);
-});
+// app.get('/',(req, res) => {
+//     const params = {};
+//     res.status(200).send('index.pug',params);
+// });
 
 // Endpoint to get all questions
 app.get("/questions", (req, res) => {
     const questions = readQuestions();
-    // res.json(questions);
-    const params = {questions};
-    res.status(200).send('questions.pug',params);
+    res.json(questions);
+    // const params = {questions};
+    // res.status(200).send('questions.pug',params);
 });
 
 // Endpoint to add a new question
 app.post("/questions", (req, res) => {
-  const newQuestion = req.body;
-  console.log(req);
+  const newQuestion = req.query;
   const questions = readQuestions();
-  console.log(newQuestion);
-//   questions.push(newQuestion);
+//   console.log(newQuestion);
+  questions.push(newQuestion);
   writeQuestions(questions);
   res.json({ message: "Question added successfully", question: newQuestion });
 });
