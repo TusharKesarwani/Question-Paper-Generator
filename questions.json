@@ -1,0 +1,23 @@
+[
+  {
+    "question": "What is the speed of light",
+    "subject": "Physics",
+    "topic": "Waves",
+    "difficulty": "Easy",
+    "marks": 5
+  },
+  {
+    "question": "How does photosynthesis work",
+    "subject": "Biology",
+    "topic": "Ecology",
+    "difficulty": "Medium",
+    "marks": 10
+  },
+  {
+    "question": "Solve x^2 - 4 = 0",
+    "subject": "Math",
+    "topic": "Algebra",
+    "difficulty": "Hard",
+    "marks": 15
+  }
+]
